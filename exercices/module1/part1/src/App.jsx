@@ -1,3 +1,8 @@
+import Header from "./components/header/Header"
+import Content from "./components/content/Content"
+import Total from "./components/total/Total"
+
+
 const App = () => {
   const course = 'Half Stack application development'
   const part1 = 'Fundamentals of React'
@@ -16,52 +21,6 @@ const App = () => {
       <Content part = {parts} exercises = {exercises}/>
       <Total exercises = {exercises}/>
     </div>
-  )
-}
-
-
-const Content = (props) => {
-  const part1 =  [props.part[0], props.exercises[0]]
-  const part2 =  [props.part[1], props.exercises[1]]
-  const part3 =  [props.part[2], props.exercises[2]]
-  return (
-    <>
-    <Part part = {part1}/>
-    <Part part = {part2}/>
-    <Part part = {part3}/>
-    </>
-  )
-}
-
-
-const Header = (props) => {
-  return (
-    <>
-    <p>
-      {props.course}
-    </p>
-    </>
-  )
-}
-
-const Total = (props) =>{
-  const total = props.exercises[0] + props.exercises[1] + props.exercises[2]
-  return (
-    <>
-    <p>
-      {total}
-    </p>
-    </>
-  )
-}
-
-const Part = (props) =>{
-  return (
-    <>
-    <p>
-      {props.part[0]}  {props.part[1]}
-    </p>
-    </>
   )
 }
 
