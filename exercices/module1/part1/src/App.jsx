@@ -2,6 +2,9 @@ import Header from "./components/header/Header"
 import Content from "./components/content/Content"
 import Total from "./components/total/Total"
 
+import './App.css'
+
+import image from './img/logo_he_vinci.png'
 
 const App = () => {
   const course = 'Half Stack application development'
@@ -20,6 +23,7 @@ const App = () => {
       <Header course={course} />
       <Content part = {parts} exercises = {exercises}/>
       <Total exercises = {exercises}/>
+      <img src={image}></img>
     </div>
   )
 }
