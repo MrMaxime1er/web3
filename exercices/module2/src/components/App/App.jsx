@@ -7,12 +7,13 @@ const App = () => {
   const [ counter, setCounter ] = useState(JSON.parse(localStorage.getItem("counter")))
 
   const handleClick = (e) => {
-    const monDelta = Number(event.target.dataset.delta)
+    const monDelta = Number(e.target.dataset.delta)
     changeCount(monDelta);
   }
   const changeCount = (delta) => {
-    setCounter(delta);
-    localStorage.setItem("counter", JSON.stringify(counter+1))
+    let c = delta
+    setCounter(c);
+    localStorage.setItem("counter", JSON.stringify(c))
   };
 
   return (
