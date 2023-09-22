@@ -6,26 +6,32 @@ import Display from '../Display/Display'
 const App = () => {
   const [ counter, setCounter ] = useState(0)
 
-  const increaseByOne = () => setCounter(counter + 1)
-
-  const decreaseByOne = () => setCounter(counter - 1)
-  const setToZero = () => setCounter(0)
+  const handleClick = (e) => {
+    const monDelta = Number(event.target.dataset.delta)
+    changeCount(monDelta);
+  }
+  const changeCount = (delta) => {
+    setCounter(delta);
+  };
 
   return (
     <div>
       <Display counter={counter}/>
 
       <Button
-        handleClick={increaseByOne}
+        handleClick = {handleClick}
+        delta = {counter + 1}
         text='plus'
       />
       <Button
-        handleClick={setToZero}
-        text='zero'
+         handleClick = {handleClick}
+         delta = {0}
+         text='zero'
       />     
       <Button
-        handleClick={decreaseByOne}
-        text='minus'
+         handleClick = {handleClick}
+         delta = {counter - 1}
+         text='minus'
       />           
     </div>
   )
